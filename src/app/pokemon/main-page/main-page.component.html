@@ -10,16 +10,6 @@
     </button>
   </div>
   
-  <div *ngIf="toggle; else textListContainer" class="container-cards">
-    <div *ngFor="let n of arr">
-      <app-card [pokemon]="n"></app-card>
-    </div>
-  </div>
-
-  <ng-template #textListContainer>
-    <div *ngFor="let n of arr">
-      <app-text-list [pokemon]="n"></app-text-list>
-    </div>
-  </ng-template>
+      <app-card [toggleButton]="toggle" [className]="toggle ? 'container-cards' : ''"></app-card>
 
 </div>
