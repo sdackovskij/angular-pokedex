@@ -9,8 +9,6 @@ export class MainPageComponent implements OnInit {
 
 
   toggle = true;
-  
- 
 
   constructor() { }
 
