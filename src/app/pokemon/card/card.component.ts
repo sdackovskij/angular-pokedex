@@ -103,9 +103,9 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {}
 
   public cardType(): string {
-    let cardClass: string;
-    this.toggleButton ? cardClass = 'card' : cardClass = 'text-list';
-    return cardClass;
+    let cardTypeClass: string;
+    this.toggleButton ? cardTypeClass = 'card' : cardTypeClass = 'text-list';
+    return cardTypeClass;
   }
 
   public buttonName(pokemon: Pokemon): string {
