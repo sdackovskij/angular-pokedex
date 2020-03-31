@@ -102,8 +102,21 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public onButton(pokemon: Pokemon) {
+  public cardType(): string {
+    let cardClass: string;
+    this.toggleButton ? cardClass = 'card' : cardClass = 'text-list';
+    return cardClass;
+  }
+
+  public buttonName(pokemon: Pokemon): string {
+    if (pokemon.isMy) {
+      return 'let go';
+    } else { return 'catch'; }
+  }
+
+  public clickButton(pokemon: Pokemon): void {
     pokemon.isMy = !pokemon.isMy;
+    this.buttonName(pokemon);
     console.log(`Pokemon ${pokemon.name} is catched: ${pokemon.isMy}`);
   }
 }

@@ -1,0 +1,11 @@
+
+
+
+
+<div appStyle={{pokemon.damage}} class={{cardType}}>
+    <img *ngIf="cardType === 'card'" class="card-img" src="../../../assets/img/{{pokemon.id}}.png">
+    <h3>{{pokemon.name}}</h3>
+    <p>Damage: {{pokemon.damage}}</p>
+     <button class='{{cardType}}-button'
+       (click)="change(pokemon)">{{buttonName}}</button> 
+</div>

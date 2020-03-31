@@ -4,11 +4,13 @@ import { HeaderComponent } from './header/header.component';
 import { CardComponent } from './card/card.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { StyleDirective } from './directives/style.directive';
+import { CardDetailsComponent } from './card-details/card-details.component';
+import { CardViewComponent } from './card-view/card-view.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, CardComponent, MainPageComponent, StyleDirective],
+  declarations: [HeaderComponent, CardComponent, MainPageComponent, StyleDirective, CardDetailsComponent, CardViewComponent],
   imports: [
     CommonModule
   ],
@@ -16,7 +18,9 @@ import { StyleDirective } from './directives/style.directive';
     HeaderComponent,
     CardComponent,
     MainPageComponent,
-    StyleDirective
+    StyleDirective,
+    CardDetailsComponent,
+    CardViewComponent
   ]
 })
 export class PokemonModule { }

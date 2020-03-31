@@ -1,8 +1,9 @@
 
+ <div class="container">
 
-<div class="container">
+<!-- <app-card-details></app-card-details> -->
 
-  <div class="container-menu">
+ <div class="container-menu">
     <h2>Welcome to Pokedex</h2>
     <span>Select view mode:</span>
     <button (click)="toggle = !toggle" class="container-button">
@@ -10,6 +11,6 @@
     </button>
   </div>
   
-      <app-card [toggleButton]="toggle" [className]="toggle ? 'container-cards' : ''"></app-card>
+      <app-card [toggleButton]="toggle" [className]="toggle ? 'container-cards' : ''"></app-card> 
 
-</div>
+</div> 
