@@ -1,0 +1,29 @@
+.card-details-container {
+    width: 50vw;
+    height: 50vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-img {
+    width: 50%;
+    height: 100%;
+    background-color: oldlace;
+}   
+
+.card-details-description {
+    width: 50%;
+    background-color: navajowhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card-details-button{
+    align-self: center;
+    max-width: 25%;
+    border-radius: 10px;
+    outline: none;
+}
