@@ -49,7 +49,7 @@ export class CardComponent implements OnInit {
       name: 'charmeleon',
       id: 5,
       isMy: true,
-      damage: 33
+      damage: 34
     },
     {
       name: 'charizard',
