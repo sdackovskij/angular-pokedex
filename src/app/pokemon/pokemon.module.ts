@@ -6,11 +6,13 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { StyleDirective } from './directives/style.directive';
 import { CardDetailsComponent } from './card-details/card-details.component';
 import { CardViewComponent } from './card-view/card-view.component';
+import { SearchComponent } from './search/search.component';
+import { PokemonServiceService } from './services/pokemon-service.service';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, CardComponent, MainPageComponent, StyleDirective, CardDetailsComponent, CardViewComponent],
+  declarations: [HeaderComponent, CardComponent, MainPageComponent, StyleDirective, CardDetailsComponent, CardViewComponent, SearchComponent],
   imports: [
     CommonModule
   ],
@@ -20,7 +22,11 @@ import { CardViewComponent } from './card-view/card-view.component';
     MainPageComponent,
     StyleDirective,
     CardDetailsComponent,
-    CardViewComponent
+    CardViewComponent,
+    SearchComponent
+  ],
+  providers: [
+    PokemonServiceService
   ]
 })
 export class PokemonModule { }
