@@ -13,9 +13,17 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  searchLine= "";
 
   public getLine(event?: Event): void{
-    this.PokemonServiceService.searchLine = (<HTMLTextAreaElement>event.target).value;
+    this.searchLine = (<HTMLTextAreaElement>event.target).value;
+  }
+
+  
+
+  @Output() getPokemonArr = new EventEmitter<string>();
+  log() {
+    this.getPokemonArr.emit(this.searchLine);
   }
 
 }

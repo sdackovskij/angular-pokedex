@@ -12,9 +12,23 @@ export class CardComponent implements OnInit {
 
   constructor(public PokemonServiceService: PokemonServiceService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getPokemonArr("");
+  }
 
-  pokemonArr: Pokemon[] = this.PokemonServiceService.getAll();
+  pokemonArr: Pokemon[]; 
+  
+  public getPokemonArr(str: string){
+    
+    if(str != ""){
+      this.pokemonArr = this.PokemonServiceService.filter(str);
+
+    } else{
+      this.pokemonArr = this.PokemonServiceService.getAll();
+    }
+    
+    
+  } 
 
   public getToggle(): boolean {
     return this.PokemonServiceService.getToggle();
@@ -36,10 +50,6 @@ export class CardComponent implements OnInit {
     pokemon.isMy = !pokemon.isMy;
     this.buttonName(pokemon);
     console.log(`Pokemon ${pokemon.name} is catched: ${pokemon.isMy}`);
-  }
-
-  public clickBut(str: string): void {
-    console.log(str);
   }
 
 }

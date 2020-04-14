@@ -1,6 +1,6 @@
 
-
-<div [className]="getToggle() ? 'cont' : ''">
+<app-search (getPokemonArr)="getPokemonArr($event)"></app-search>
+<div [className]="getToggle() ? 'contrainerForCards' : ''">
 <div *ngFor="let pokemon of pokemonArr" >
  
     <app-card-view 
