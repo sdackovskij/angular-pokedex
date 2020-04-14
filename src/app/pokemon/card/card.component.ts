@@ -1,13 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PokemonServiceService } from '../services/pokemon-service.service';
+import { PokemonServiceService, Pokemon } from '../services/pokemon-service.service';
 
-interface Pokemon {
-  name: string;
-  isMy: boolean;
-  id: number;
-  date?: string;
-  damage: number;
-}
 
 @Component({
   selector: 'app-card',
@@ -16,7 +9,6 @@ interface Pokemon {
 })
 export class CardComponent implements OnInit {
 
-  @Input() toggleButton: boolean;
 
   constructor(public PokemonServiceService: PokemonServiceService) {}
 
@@ -24,9 +16,13 @@ export class CardComponent implements OnInit {
 
   pokemonArr: Pokemon[] = this.PokemonServiceService.getAll();
 
+  public getToggle(): boolean {
+    return this.PokemonServiceService.getToggle();
+  }
+
   public cardType(): string {
     let cardTypeClass: string;
-    this.toggleButton ? cardTypeClass = 'card' : cardTypeClass = 'text-list';
+    this.getToggle() ? cardTypeClass = 'card' : cardTypeClass = 'text-list';
     return cardTypeClass;
   }
 
@@ -41,4 +37,9 @@ export class CardComponent implements OnInit {
     this.buttonName(pokemon);
     console.log(`Pokemon ${pokemon.name} is catched: ${pokemon.isMy}`);
   }
+
+  public clickBut(str: string): void {
+    console.log(str);
+  }
+
 }

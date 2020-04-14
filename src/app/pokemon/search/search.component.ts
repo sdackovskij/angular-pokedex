@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { PokemonServiceService, Pokemon } from '../services/pokemon-service.service';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(public PokemonServiceService: PokemonServiceService) { }
 
   ngOnInit(): void {
+  }
+
+
+  public getLine(event?: Event): void{
+    this.PokemonServiceService.searchLine = (<HTMLTextAreaElement>event.target).value;
   }
 
 }

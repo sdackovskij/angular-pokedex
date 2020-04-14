@@ -8,13 +8,15 @@ import { CardDetailsComponent } from './card-details/card-details.component';
 import { CardViewComponent } from './card-view/card-view.component';
 import { SearchComponent } from './search/search.component';
 import { PokemonServiceService } from './services/pokemon-service.service';
+import { PokemonRoutingModule } from './pokemon-routing.module';
 
 
 
 @NgModule({
   declarations: [HeaderComponent, CardComponent, MainPageComponent, StyleDirective, CardDetailsComponent, CardViewComponent, SearchComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    PokemonRoutingModule
   ],
   exports: [
     HeaderComponent,

@@ -1,13 +1,14 @@
 
 
-
-<div *ngFor="let pokemon of pokemonArr">
+<div [className]="getToggle() ? 'cont' : ''">
+<div *ngFor="let pokemon of pokemonArr" >
  
-    <app-card-view
+    <app-card-view 
         [pokemon]="pokemon"
         [cardType]="cardType()"
         (clickButton)="clickButton($event)"
         [buttonName]="buttonName(pokemon)">
     </app-card-view>
-
+    
+</div>
 </div>

@@ -1,11 +1,35 @@
 import { Injectable } from '@angular/core';
 
+
+export interface Pokemon {
+  name: string;
+  isMy: boolean;
+  id: number;
+  date?: string;
+  damage: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonServiceService {
 
   constructor() { }
+
+  toggle: boolean;
+
+  searchLine: string;
+  
+  public getToggle(): boolean{
+    if(this.toggle === undefined){
+      return true
+    }
+    return this.toggle;
+  }
+
+  public setToggle(tgl: boolean): void{
+    this.toggle = tgl;
+  }
 
   public getAll(){
     return this.pokemonArr;
@@ -17,7 +41,7 @@ export class PokemonServiceService {
     })
   }
 
-  public getById(inputValue: string){
+  public getById(inputValue: number){
     return this.pokemonArr.filter((pokemon) => {
       return pokemon.id === Number(inputValue);
     })
