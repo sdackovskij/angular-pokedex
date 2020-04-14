@@ -23,7 +23,6 @@ export class CardComponent implements OnInit {
     if (!isNaN(+str) && (str != "") ){
       this.pokemonArr = this.PokemonServiceService.getById(+str);
     }else if(str != ""){
-      console.log(str)
       this.pokemonArr = this.PokemonServiceService.filter(str);
     } else{
       this.pokemonArr = this.PokemonServiceService.getAll();
