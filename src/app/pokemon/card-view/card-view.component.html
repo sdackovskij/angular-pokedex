@@ -2,11 +2,13 @@
 
 
 
-<div appStyle={{pokemon.damage}} class={{cardType}}>
-  <a [routerLink]="['/card-details', pokemon.id]">
+<div  class={{cardType}}>
+  <a [routerLink]="['/card-details', pokemon.id]" class="links">
+    <div class="forBorder" appStyle={{pokemon.damage}}>
     <img *ngIf="cardType === 'card'" class="card-img" src="../../../assets/img/{{pokemon.id}}.png">
     <h3>{{pokemon.name}}</h3>
     <p>Damage: {{pokemon.damage}}</p>
+    </div>
     </a>
      <button class='{{cardType}}-button'
        (click)="change(pokemon)">{{buttonName}}</button>
