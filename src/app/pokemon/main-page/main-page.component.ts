@@ -9,16 +9,14 @@ import { PokemonServiceService } from '../services/pokemon-service.service';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor(public PokemonServiceService: PokemonServiceService) { }
+  toggle = true;
+
+  constructor(public PokemonService: PokemonServiceService) { }
 
   ngOnInit(): void { }
- toggle = true;
-  
+
   changeToggle(): void {
     this.toggle = !this.toggle;
-    this.PokemonServiceService.setToggle(this.toggle);
+    this.PokemonService.setToggle(this.toggle);
   }
-  
-  
-
 }

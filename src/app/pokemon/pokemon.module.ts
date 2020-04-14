@@ -13,7 +13,15 @@ import { PokemonRoutingModule } from './pokemon-routing.module';
 
 
 @NgModule({
-  declarations: [HeaderComponent, CardComponent, MainPageComponent, StyleDirective, CardDetailsComponent, CardViewComponent, SearchComponent],
+  declarations: [
+    HeaderComponent,
+    CardComponent,
+    MainPageComponent,
+    StyleDirective,
+    CardDetailsComponent,
+    CardViewComponent,
+    SearchComponent
+  ],
   imports: [
     CommonModule,
     PokemonRoutingModule

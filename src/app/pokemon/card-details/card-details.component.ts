@@ -9,15 +9,14 @@ import { PokemonServiceService, Pokemon } from '../services/pokemon-service.serv
 })
 export class CardDetailsComponent implements OnInit {
 
-  pokemon: Pokemon
+  pokemon: Pokemon;
 
-  constructor(private route: ActivatedRoute,
-    private pokemonService: PokemonServiceService) { }
+  constructor(private route: ActivatedRoute, private pokemonService: PokemonServiceService) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: Params)=>{
+    this.route.params.subscribe((params: Params) => {
      this.pokemon = this.pokemonService.getById(+params.id)[0];
-    })
+    });
   }
 
 }

@@ -19,36 +19,8 @@ export class PokemonServiceService {
   toggle: boolean;
 
   searchLine: string;
-  
-  public getToggle(): boolean{
-    if(this.toggle === undefined){
-      return true
-    }
-    return this.toggle;
-  }
 
-  public setToggle(tgl: boolean): void{
-    this.toggle = tgl;
-  }
-
-  public getAll(){
-    return this.pokemonArr;
-  }
-
-  public filter(inputValue: string){
-    return this.pokemonArr.filter((pokemon)=>{
-        return pokemon.name === inputValue;
-    })
-  }
-
-  public getById(inputValue: number){
-    return this.pokemonArr.filter((pokemon) => {
-      return pokemon.id === Number(inputValue);
-    })
-  }
-
-
-  public pokemonArr = [
+  pokemonArr = [
     {
       name: 'bulbasaur',
       id: 1,
@@ -128,4 +100,31 @@ export class PokemonServiceService {
       damage: 90
     }
   ];
+
+  public getToggle(): boolean {
+    if (this.toggle === undefined) {
+      return true;
+    }
+    return this.toggle;
+  }
+
+  public setToggle(tgl: boolean): void {
+    this.toggle = tgl;
+  }
+
+  public getAll() {
+    return this.pokemonArr;
+  }
+
+  public filter(inputValue: string) {
+    return this.pokemonArr.filter((pokemon) => {
+      return pokemon.name === inputValue;
+    });
+  }
+
+  public getById(inputValue: number) {
+    return this.pokemonArr.filter((pokemon) => {
+      return pokemon.id === Number(inputValue);
+    });
+  }
 }

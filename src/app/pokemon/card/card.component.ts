@@ -9,30 +9,27 @@ import { PokemonServiceService, Pokemon } from '../services/pokemon-service.serv
 })
 export class CardComponent implements OnInit {
 
+  pokemonArr: Pokemon[];
 
-  constructor(public PokemonServiceService: PokemonServiceService) {}
+  constructor(public PokemonService: PokemonServiceService) {}
 
   ngOnInit(): void {
-    this.getPokemonArr("");
+    this.getPokemonArr('');
   }
 
-  pokemonArr: Pokemon[]; 
-  
-  public getPokemonArr(str: string){
-    
-    if (!isNaN(+str) && (str != "") ){
-      this.pokemonArr = this.PokemonServiceService.getById(+str);
-    }else if(str != ""){
-      this.pokemonArr = this.PokemonServiceService.filter(str);
-    } else{
-      this.pokemonArr = this.PokemonServiceService.getAll();
+  public getPokemonArr(str: string) {
+
+    if (!isNaN( +str ) && ( str !== '' ) ) {
+      this.pokemonArr = this.PokemonService.getById(+str);
+    } else if ( str !== ''  ) {
+      this.pokemonArr = this.PokemonService.filter(str);
+    } else {
+      this.pokemonArr = this.PokemonService.getAll();
     }
-    
-    
-  } 
+}
 
   public getToggle(): boolean {
-    return this.PokemonServiceService.getToggle();
+    return this.PokemonService.getToggle();
   }
 
   public cardType(): string {
