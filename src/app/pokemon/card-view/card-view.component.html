@@ -3,7 +3,7 @@
 
 
 <div  class={{cardType}}>
-  <a [routerLink]="['/card-details', pokemon.id]" class="links">
+  <a [routerLink]="['/card-details', pokemon.id]" [queryParams]="[pokemon.name]" class="links">
     <div class="forBorder" appStyle={{pokemon.damage}}>
     <img *ngIf="cardType === 'card'" class="card-img" src="../../../assets/img/{{pokemon.id}}.png">
     <h3>{{pokemon.name}}</h3>
