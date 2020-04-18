@@ -1,12 +1,13 @@
 <div class="card-details-container">
+  <img class="card-img" src="../../../assets/img/{{ pokemon.id }}.png" />
 
-<img class="card-img" src="../../../assets/img/1.png">
-
-<div class="card-details-description">
-<p>Name:</p>
-<p>Detailed info</p>
-<button class="card-details-button">Catch</button>
-</div>
-
-
+  <div class="card-details-description">
+    <p>Name: {{ pokemon.name }}</p>
+    <p><b>Detailed info</b></p>
+    <p>Damage: {{ pokemon.damage }}</p>
+    <p>Catched: {{ pokemon.isMy }}</p>
+    {{ pokemon.date }}
+    <button class="card-details-button">Edit</button>
+    <button class="card-details-button">Catch</button>
+  </div>
 </div>

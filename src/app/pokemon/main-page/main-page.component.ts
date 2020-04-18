@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonServiceService } from '../services/pokemon-service.service';
+
 
 @Component({
   selector: 'app-main-page',
@@ -7,12 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-
   toggle = true;
 
-  constructor() { }
+  constructor(public PokemonService: PokemonServiceService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  changeToggle(): void {
+    this.toggle = !this.toggle;
+    this.PokemonService.setToggle(this.toggle);
   }
-
 }

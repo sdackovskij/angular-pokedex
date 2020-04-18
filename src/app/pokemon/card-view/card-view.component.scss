@@ -1,9 +1,8 @@
 .card {
     width: 200px;
     height: 350px;
-    border: 1px solid black;
     margin: 20px;
-    border-radius: 10px;
+    
 }
 
 .card-img {
@@ -15,24 +14,25 @@
     outline: none;
 }
 
-
+.forBorder{
+    border: 1px solid black;
+    border-radius: 10px;
+}
 
 .text-list {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-top: 20px;
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 90%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
 
-
     h3, p { 
-        display: flex;
+        display: inline-block;
         width: 150px;
         align-items: center;
+        padding: 20px;
     }
     h3, p {
         justify-content: left;
@@ -43,9 +43,16 @@
         border-radius: 10px;
         font-size: 12px;
         outline: none;
+        padding: 0 15px;
     }
 }
 
 .text-list:last-child {
     margin-bottom: 30px;
+}
+
+.links{
+    text-decoration: none;
+    color: black;
+    outline: none;
 }
