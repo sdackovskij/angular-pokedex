@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { CardComponent } from './card/card.component';
 import { MainPageComponent } from './main-page/main-page.component';
@@ -9,6 +10,7 @@ import { CardViewComponent } from './card-view/card-view.component';
 import { SearchComponent } from './search/search.component';
 import { PokemonServiceService } from './services/pokemon-service.service';
 import { PokemonRoutingModule } from './pokemon-routing.module';
+import { EditFormComponent } from './edit-form/edit-form.component';
 
 
 
@@ -20,11 +22,14 @@ import { PokemonRoutingModule } from './pokemon-routing.module';
     StyleDirective,
     CardDetailsComponent,
     CardViewComponent,
-    SearchComponent
+    SearchComponent,
+    EditFormComponent
   ],
   imports: [
     CommonModule,
-    PokemonRoutingModule
+    PokemonRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     HeaderComponent,
@@ -33,7 +38,8 @@ import { PokemonRoutingModule } from './pokemon-routing.module';
     StyleDirective,
     CardDetailsComponent,
     CardViewComponent,
-    SearchComponent
+    SearchComponent,
+    EditFormComponent
   ],
   providers: [
     PokemonServiceService

@@ -1,0 +1,16 @@
+<div class="card-details-container">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+    <img class="card-img" src="../../../assets/img/{{ pokemon.id }}.png" />
+    
+    <div class="card-details-description">
+        <span>Name:</span> <input formControlName="name" />
+        <p><b>Detailed info</b></p>
+        <span>Damage:</span><input formControlName="damage" />
+        <p><span>Creation date:</span><input formControlName="date" /></p>
+        <p>Catched: {{ pokemon.isMy }}</p>
+        
+        <button type="submit" class="card-details-button">Save</button>
+        <button type="button" [routerLink]="['/card-details', pokemon.id]" class="card-details-button">Cancel</button>
+    </div>
+    </form>
+</div>

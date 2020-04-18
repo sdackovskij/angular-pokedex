@@ -12,5 +12,5 @@
     </a>
      <button class='{{cardType}}-button'
        (click)="change(pokemon)">{{buttonName}}</button>
-      <button class='{{cardType}}-button'>Edit</button>
+      <button class='{{cardType}}-button' [routerLink]="['/card-details/edit', pokemon.id]">Edit</button>
 </div>

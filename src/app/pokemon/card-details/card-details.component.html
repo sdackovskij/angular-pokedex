@@ -5,9 +5,10 @@
     <p>Name: {{ pokemon.name }}</p>
     <p><b>Detailed info</b></p>
     <p>Damage: {{ pokemon.damage }}</p>
+    <p>Creation date:{{ pokemon.date }}</p>
     <p>Catched: {{ pokemon.isMy }}</p>
-    {{ pokemon.date }}
-    <button class="card-details-button">Edit</button>
+  
+    <button  [routerLink]="['/card-details/edit', pokemon.id]" class="card-details-button">Edit</button>
     <button class="card-details-button">Catch</button>
   </div>
 </div>
