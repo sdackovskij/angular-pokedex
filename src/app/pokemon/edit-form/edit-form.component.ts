@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Pokemon, PokemonServiceService } from '../services/pokemon-service.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-form',
@@ -11,6 +11,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class EditFormComponent implements OnInit {
 
   form: FormGroup;
+
+  buttonEdit = false;
 
   pokemon: Pokemon;
 
@@ -28,8 +30,16 @@ export class EditFormComponent implements OnInit {
     });
   }
 
+  public wasTouched(): boolean{
+    if (this.buttonEdit){
+      alert('Information saved!');
+      return true;
+    }
+    return false;
+  }
+
   submit(): void {
-    alert('Information saved!');
+    this.buttonEdit = true;
     this.route.params.subscribe((params: Params) => {
       this.pokemonService.getById(+params.id)[0].name = this.form.value.name;
       this.pokemonService.getById(+params.id)[0].damage = this.form.value.damage;

@@ -12,6 +12,6 @@ export class EditFormDeactivateGuard implements CanDeactivate<EditFormComponent>
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return confirm('Are you sure, that you want exit?');
+    return component.wasTouched() || confirm('Are you sure, that you want exit?');
   }
 }
