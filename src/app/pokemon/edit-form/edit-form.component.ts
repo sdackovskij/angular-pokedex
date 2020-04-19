@@ -30,7 +30,7 @@ export class EditFormComponent implements OnInit {
     });
   }
 
-  public wasTouched(): boolean {
+  public wasEdit(): boolean {
     if (this.buttonEdit) {
       alert('Information saved!');
       return true;
