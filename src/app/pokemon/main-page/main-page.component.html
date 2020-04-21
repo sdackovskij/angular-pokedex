@@ -1,16 +1,23 @@
 
+
  <div class="container">
 
-<!-- <app-card-details></app-card-details> -->
+
 
  <div class="container-menu">
-    <h2>Welcome to Pokedex</h2>
+    <h2 [routerLink]="['/']">Welcome to Pokedex</h2>
     <span>Select view mode:</span>
-    <button (click)="toggle = !toggle" class="container-button">
+    <button (click)="changeToggle()" class="container-button">
       With image List / Text List
     </button>
   </div>
+ 
+    <router-outlet></router-outlet>
+ 
+    
   
-      <app-card [toggleButton]="toggle" [className]="toggle ? 'container-cards' : ''"></app-card> 
+  
+ 
+      
 
 </div> 
